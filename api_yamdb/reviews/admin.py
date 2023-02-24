@@ -1,10 +1,8 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group
-from .models import User
 from django.db import models
 from reviews.models import (Category, Comment, Genre, Review, Title,
                             User, GenreTitle)
-from django.contrib.auth.admin import UserAdmin, User
 
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
@@ -43,7 +41,7 @@ class UserAdmin(ImportExportModelAdmin,):
         'first_name',
         'last_name',
         'username',
-        'email'
+        'email',
     )
     list_filter = ('username',)
     empty_value_display = '-пусто-'
